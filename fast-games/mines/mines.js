@@ -236,7 +236,7 @@ function onCellClick(e) {
 
   flipCard.classList.add("flipped");
 
-  if (mines[index]) {
+  if (mines.includes(index)) {
     backFace.textContent = "💣";
     backFace.classList.add("mine");
     playBomb();
