@@ -1,0 +1,572 @@
+/* Mines Game Styling - Consistent with Plinko */
+:root {
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --accent: #c6ff00;
+}
+
+html {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #14151f;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.container {
+  width: 100%;
+  max-width: 650px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.header h1 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.balance-display {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #00ff00;
+}
+
+button {
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+.controls {
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.controls input[type="number"],
+.controls input[type="range"] {
+  width: 100px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.controls input[type="range"] {
+  width: 80px;
+}
+
+.controls input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.controls button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+#start-game {
+  background: var(--accent);
+  color: #000;
+}
+
+#start-game:hover {
+  background: #00ff00;
+  transform: translateY(-1px);
+}
+
+#cash-out {
+  background: #ffa726;
+  color: #000;
+}
+
+#cash-out:hover:not(:disabled) {
+  background: #ff9800;
+  transform: translateY(-1px);
+}
+
+#cash-out:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#reset-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: flex-start;
+}
+
+#reset-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.controls span {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+.message {
+  color: #ffd166;
+  font-size: 14px;
+  text-align: right;
+  min-height: 20px;
+  grid-column: 2 / 5;
+  grid-row: 2;
+  justify-self: flex-end;
+}
+
+/* Secondary Controls */
+.secondary-controls {
+  background: var(--card-bg);
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+#random-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  background: #9c27b0;
+  color: #fff;
+}
+
+#random-btn:hover:not(:disabled) {
+  background: #ba68c8;
+  transform: translateY(-1px);
+}
+
+#random-btn:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Toggle Switch */
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-label input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-slider {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  transition: background 0.3s;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s;
+}
+
+.toggle-label input[type="checkbox"]:checked + .toggle-slider {
+  background: var(--accent);
+}
+
+.toggle-label input[type="checkbox"]:checked + .toggle-slider::before {
+  transform: translateX(24px);
+}
+
+.toggle-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%);
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  min-width: 320px;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  color: #fff;
+}
+
+.modal-content p {
+  margin: 0 0 24px 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.rounds-options {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.round-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.round-btn:hover {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(198, 255, 0, 0.3);
+}
+
+.round-btn:active {
+  transform: translateY(-2px);
+}
+
+.cancel-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.footer {
+  margin-top: 2em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85em;
+}
+
+/* Game Board */
+.game-board {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-board-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  grid-gap: 10px;
+  perspective: 1000px; /* Enable 3D perspective */
+}
+
+/* Flip Card Container */
+.flip-card {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Trigger flip on click */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Faces */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 8px;
+  user-select: none;
+  border: 2px solid #444;
+}
+
+/* Front Face (Hidden Card) */
+.flip-card-front {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  font-size: 28px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.flip-card:hover .flip-card-front {
+  background: linear-gradient(135deg, #7b8ff0 0%, #8a5bb8 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Back Face (Revealed Content) */
+.flip-card-back {
+  background-color: #333;
+  transform: rotateY(180deg);
+  font-size: 32px;
+}
+
+/* Mine (Red) */
+.flip-card-back.mine {
+  background: linear-gradient(135deg, #ff4757 0%, #c0392b 100%);
+  animation: shake 0.5s;
+  box-shadow: 0 0 20px rgba(255, 71, 87, 0.6);
+}
+
+/* Safe (Green) */
+.flip-card-back.safe {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  animation: pulse 0.5s;
+  box-shadow: 0 0 20px rgba(46, 204, 113, 0.6);
+}
+
+/* Dimmed (Unrevealed Safe Cells) */
+.flip-card-back.dimmed {
+  opacity: 0.5;
+  background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+  box-shadow: none;
+}
+
+/* Shake Animation for Mines */
+@keyframes shake {
+  0%, 100% { transform: rotateY(180deg) translateX(0); }
+  25% { transform: rotateY(180deg) translateX(-5px); }
+  75% { transform: rotateY(180deg) translateX(5px); }
+}
+
+/* Pulse Animation for Safe Cells */
+@keyframes pulse {
+  0%, 100% { transform: rotateY(180deg) scale(1); }
+  50% { transform: rotateY(180deg) scale(1.05); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.3em;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    gap: 8px;
+  }
+
+  .controls label {
+    font-size: 12px;
+  }
+
+  .controls input {
+    width: 100%;
+  }
+
+  .controls button {
+    width: 100%;
+  }
+
+  #reset-btn {
+    grid-column: 1;
+    grid-row: 5;
+    justify-self: stretch;
+  }
+
+  .message {
+    grid-column: 1;
+    grid-row: 6;
+    text-align: center;
+    justify-self: stretch;
+  }
+
+  .secondary-controls {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  #random-btn {
+    width: 100%;
+  }
+
+  .toggle-label {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .game-board-grid {
+    grid-template-columns: repeat(5, 50px);
+    grid-gap: 8px;
+  }
+
+  .flip-card {
+    width: 50px;
+    height: 50px;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    font-size: 20px;
+  }
+
+  .flip-card-front {
+    font-size: 22px;
+  }
+
+  .flip-card-back {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 390px) {
+  .game-board-grid {
+    grid-template-columns: repeat(5, 45px);
+    grid-gap: 6px;
+  }
+
+  .flip-card {
+    width: 45px;
+    height: 45px;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    font-size: 18px;
+  }
+
+  .flip-card-front {
+    font-size: 20px;
+  }
+
+  .flip-card-back {
+    font-size: 24px;
+  }
+}

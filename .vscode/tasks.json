@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start local web server for html5-games",
+			"type": "shell",
+			"command": "powershell -Command \"cd 'c:\\Users\\root\\html5-games'; python -m http.server 8080\"",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

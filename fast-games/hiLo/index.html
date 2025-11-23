@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>HiLo — Casino Style</title>
+<link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>HiLo</h1>
+      <div class="balance-display">Balance: $<span id="balance">1000.00</span></div>
+    </header>
+
+    <section class="controls">
+      <div class="controls-row">
+        <label>Bet Amount: $<input id="bet-amount" type="number" min="1" step="1" value="10" /></label>
+        <div class="controls-row-left">
+          <button id="start-game">Bet</button>
+          <button id="cash-out" disabled>Cashout</button>
+        </div>
+      </div>
+      <div class="controls-row">
+        <button id="reset">Reset Balance</button>
+        <div class="message" id="message"></div>
+      </div>
+    </section>
+
+    <main class="game">
+      <div class="game-row">
+        <!-- Deck (face-down) -->
+        <div class="deck-wrap">
+          <div id="deck-stack" class="deck-stack">
+            <div class="deck-card deck-card-3"></div>
+            <div class="deck-card deck-card-2"></div>
+            <div class="deck-card deck-card-1"></div>
+          </div>
+        </div>
+
+        <!-- Active card area + faded previous holder -->
+        <div class="card-stage">
+          <div id="prev-holder" class="prev-holder"></div>
+          <div id="card" class="card">
+            <div class="card-inner">
+              <div class="card-front">?</div>
+              <div class="card-back"><div class="rank"></div><div class="suit"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guess Buttons (always show 3) -->
+      <div class="guess-buttons active" id="guess-buttons">
+        <button id="higher-btn" class="guess-btn" data-choice="higher">
+          <div class="label">Higher</div>
+          <div class="step" id="step-higher">—</div>
+        </button>
+
+        <button id="same-btn" class="guess-btn" data-choice="same">
+          <div class="label">Same</div>
+          <div class="step" id="step-same">—</div>
+        </button>
+
+        <button id="lower-btn" class="guess-btn" data-choice="lower">
+          <div class="label">Lower</div>
+          <div class="step" id="step-lower">—</div>
+        </button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <small>All chips are virtual. Actual multipliers may vary.</small>
+    </footer>
+  </div>
+
+  <script src="hiLo.js"></script>
+</body>
+</html>

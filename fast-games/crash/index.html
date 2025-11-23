@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crash Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="game" width="400" height="350"></canvas>
+        <p id="currentMultiplier">1.00x</p>
+    </div>
+
+    <div id="infoContainer">
+        <div style="display: flex;">
+            <p id="balance">1000$</p>
+            <p id="crashedAt">Multiplier at crash: —</p>
+        </div>
+    </div>
+
+    <div id="buttonContainer">
+        <label for="betAmount">Bet Amount:</label>
+        <input type="number" id="betAmount" value="10" min="1">
+        <button id="submitBet">Start Game</button>
+        <button id="takeProfits">Take Profits</button>
+    </div>
+
+    <div id="lastCrashesContainer">
+        <p>Last Crashes:</p>
+        <div id="lastCrashes"></div>
+    </div>
+
+<script src="crash.js"></script>
+</body>
+</html>

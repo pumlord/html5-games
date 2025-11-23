@@ -1,0 +1,70 @@
+body {
+    background-color: #1f1e25;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+#gameContainer {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#game {
+    width: 400px;
+    height: 350px;
+    background-color: #2c2b33;
+    border-radius: 12px;
+}
+
+#currentMultiplier {
+    position: absolute;
+    top: 140px;
+    left: 120px;
+    font-size: 50px;
+}
+
+#infoContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#balance {
+    color: lime;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#crashedAt {
+    margin-left: 20px;
+}
+
+#betAmount {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#submitBet, #takeProfits {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+#submitBet:hover, #takeProfits:hover {
+    background-color: #45a049;
+}
+
+#lastCrashesContainer p {
+    font-weight: bold;
+}
+
+#lastCrashes p {
+    margin: 2px 0;
+}

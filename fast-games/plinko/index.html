@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Plinko — Fast Games</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Plinko</h1>
+      <div class="balance-display">Balance: $<span id="balance">1000</span></div>
+    </div>
+
+    <section class="controls">
+      <label>Bet per ball: $<input id="bet-input" type="number" min="1" value="10"></label>
+      <label>Balls to drop: <input id="count-input" type="number" min="1" value="1"></label>
+      <button id="drop-btn">Drop</button>
+      <button id="reset-btn">Reset Balance</button>
+      <div class="message" id="message"></div>
+    </section>
+
+    <div class="canvas-wrapper">
+      <div class="canvas-container">
+        <canvas id="plinko-canvas"></canvas>
+      </div>
+    </div>
+
+    <div class="notes">
+      <div class="note" id="note-0">16x</div>
+      <div class="note" id="note-1">9x</div>
+      <div class="note" id="note-2">2x</div>
+      <div class="note" id="note-3">1.4x</div>
+      <div class="note" id="note-4">1.4x</div>
+      <div class="note" id="note-5">1.2x</div>
+      <div class="note" id="note-6">1.1x</div>
+      <div class="note" id="note-7">1x</div>
+      <div class="note" id="note-8">0.5x</div>
+      <div class="note" id="note-9">1x</div>
+      <div class="note" id="note-10">1.1x</div>
+      <div class="note" id="note-11">1.2x</div>
+      <div class="note" id="note-12">1.4x</div>
+      <div class="note" id="note-13">1.4x</div>
+      <div class="note" id="note-14">2x</div>
+      <div class="note" id="note-15">9x</div>
+      <div class="note" id="note-16">16x</div>
+    </div>
+
+    <footer class="footer">
+      <small>All chips are virtual. Actual multipliers may vary.</small>
+    </footer>
+  </div>
+
+  <script src="plinko.js"></script>
+</body>
+</html>

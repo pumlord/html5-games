@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mines — Fast Games</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Mines</h1>
+      <div class="balance-display">Balance: $<span id="balance">1000</span></div>
+    </div>
+
+    <section class="controls">
+      <label>Bet Amount: $<input id="bet-amount" type="number" min="1" value="10"></label>
+      <label>Mines: <input id="mines-count" type="range" min="1" max="5" value="3"><span id="mines-value">3</span></label>
+      <button id="start-game">Bet</button>
+      <button id="cash-out" disabled>Cash Out</button>
+      <button id="reset-btn">Reset Balance</button>
+      <div class="message" id="message"></div>
+    </section>
+
+    <section class="secondary-controls">
+      <button id="random-btn" disabled>Random</button>
+      <label class="toggle-label">
+        <input type="checkbox" id="auto-game-toggle">
+        <span class="toggle-slider"></span>
+        <span class="toggle-text">Auto Game</span>
+      </label>
+    </section>
+
+    <div class="game-board">
+      <div class="game-board-grid" id="board">
+        <!-- Cells will be generated via JS -->
+      </div>
+    </div>
+
+    <footer class="footer">
+      <small>All chips are virtual. Actual multipliers may vary.</small>
+    </footer>
+  </div>
+
+  <!-- Auto Game Modal -->
+  <div id="auto-game-modal" class="modal">
+    <div class="modal-content">
+      <h2>Auto Game</h2>
+      <p>Number of rounds</p>
+      <div class="rounds-options">
+        <button class="round-btn" data-rounds="3">3</button>
+        <button class="round-btn" data-rounds="5">5</button>
+        <button class="round-btn" data-rounds="10">10</button>
+      </div>
+      <button id="cancel-auto-game" class="cancel-btn">Cancel</button>
+    </div>
+  </div>
+
+  <script src="mines.js"></script>
+</body>
+</html>
