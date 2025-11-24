@@ -23,14 +23,22 @@
     </footer>
   </div>
 
-  <script>
-    function sendHeight() {
-        const height = document.documentElement.scrollHeight;
-        parent.postMessage({ height }, "*");
-    }
-    window.addEventListener("load", sendHeight);
-    window.addEventListener("resize", sendHeight);
-  </script>
+	<script>
+		function sendHeight() {
+				const height = document.documentElement.scrollHeight;
+				parent.postMessage({ height }, "*");
+		}
+
+		// Send immediately on load
+		window.addEventListener("load", sendHeight);
+
+		// Also on resize
+		window.addEventListener("resize", sendHeight);
+
+		// Observe content changes dynamically
+		const observer = new MutationObserver(sendHeight);
+		observer.observe(document.body, { childList: true, subtree: true });
+	</script>
 </body>
 </html>
 
