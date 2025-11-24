@@ -12,7 +12,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   background: #14151f;
   color: #fff;
-  min-height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
