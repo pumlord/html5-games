@@ -2,8 +2,8 @@
 console.clear();
 
 // Canvas dimensions
-const WIDTH = 620;
-const HEIGHT = 534;
+const WIDTH = 500;
+const HEIGHT = 430;
 
 // Multipliers (17 slots for 16 rows)
 const SLOT_MULTIPLIERS = [16, 9, 2, 1.4, 1.4, 1.2, 1.1, 1, 0.5, 1, 1.1, 1.2, 1.4, 1.4, 2, 9, 16];
@@ -73,9 +73,9 @@ const render = Render.create({
 });
 
 // Create pegs with invisible boundary pegs at first and last position of each row
-const GAP = 32;
-const PEG_RAD = 4;
-const WALL_PEG_RAD = 8; // Larger radius for wall pegs to prevent balls escaping
+const GAP = 26;
+const PEG_RAD = 3;
+const WALL_PEG_RAD = 6; // Larger radius for wall pegs to prevent balls escaping
 const pegs = [];
 const wallPegs = []; // Track wall pegs separately for collision handling
 
@@ -121,7 +121,7 @@ const ground = Bodies.rectangle(WIDTH / 2, HEIGHT + 22, WIDTH * 2, 40, {
 Composite.add(engine.world, [ground]);
 
 // Drop a ball - Precise probability distribution matching slot probabilities
-const BALL_RAD = 7;
+const BALL_RAD = 6;
 
 // Target probabilities for each slot (17 slots total)
 const TARGET_PROBABILITIES = [

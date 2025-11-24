@@ -166,6 +166,12 @@ button:active {
 }
 
 
+.game-area {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .canvas-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -176,9 +182,7 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1em;
-  width: 620px;
-  max-width: 100%;
+  width: 100%;
 }
 
 #plinko-canvas {
@@ -192,10 +196,9 @@ button:active {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 6px;
-	margin-top: 5px;
-  width: 620px;
-  max-width: 100%;
+  gap: 5px;
+  margin-top: 5px;
+  width: 100%;
   padding: 0 10px;
 }
 
@@ -204,15 +207,15 @@ button:active {
   align-items: center;
   justify-content: center;
   flex: 1;
-  min-width: 20px;
-  max-width: 27px;
+  min-width: 16px;
+  max-width: 22px;
   aspect-ratio: 30 / 26;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: gray;
   flex-shrink: 1;
-  border-bottom: solid 4px yellow;
+  border-bottom: solid 3px yellow;
   text-align: center;
-  font-size: 0.65em;
+  font-size: 0.6em;
   font-weight: 600;
   color: #000;
 }
@@ -223,13 +226,13 @@ button:active {
 
 @keyframes press {
   0% {
-    border-bottom-width: 4px;
+    border-bottom-width: 3px;
   }
   50% {
     border-bottom-width: 0;
   }
   100% {
-    border-bottom-width: 4px;
+    border-bottom-width: 3px;
   }
 }
 
