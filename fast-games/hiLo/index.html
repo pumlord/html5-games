@@ -75,5 +75,14 @@
   </div>
 
   <script src="hiLo.js"></script>
+
+	<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        parent.postMessage({ height }, "*");
+    }
+    window.addEventListener("load", sendHeight);
+    window.addEventListener("resize", sendHeight);
+  </script>
 </body>
 </html>
