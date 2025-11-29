@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Fishing Game — Canvas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Fishing — Mini Demo</h1>
+
+    <div class="hud">
+      <div class="info">
+        <span>Balance: $<span id="balance">100</span></span>
+        <span>Score: <span id="score">0</span></span>
+        <span id="caughtLabel">Caught: 0</span>
+      </div>
+      <div class="controls">
+        <button id="spawnBtn" class="control">Spawn fish</button>
+        <button id="clearBtn" class="control">Clear fish</button>
+        <label class="toggle">
+          <input id="soundToggle" type="checkbox" checked>
+          Sound
+        </label>
+      </div>
+    </div>
+
+    <div class="canvas-wrap">
+      <canvas id="gameCanvas" width="650" height="420" aria-label="Fishing game canvas"></canvas>
+    </div>
+
+    <p class="caption">Click a fish to catch it. Fish are programmatically drawn vector art (right-facing by default).</p>
+  </div>
+
+  <script src="game.js" type="module"></script>
+</body>
+</html>

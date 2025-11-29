@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blackjack — Casino</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1><a href="../index.html" class="back-link">‹</a> Blackjack</h1>
+      <div class="balance-display">Balance: $<span id="balance">1000.00</span></div>
+    </header>
+
+    <section class="controls">
+      <div class="controls-row">
+        <label>Bet Amount: $<input id="bet-amount" type="number" min="1" step="1" value="10" /></label>
+        <div class="controls-row-left">
+          <button id="deal-btn">Deal</button>
+        </div>
+      </div>
+      <div class="controls-row">
+        <button id="reset">Reset Balance</button>
+        <div class="message" id="message"></div>
+      </div>
+    </section>
+
+    <main class="game">
+      <!-- Combined Hand Row -->
+      <div class="hand-row">
+        <div class="card-stage">
+          <div class="hand-header">
+            <div class="hand-label">Dealer</div>
+            <div id="dealer-total" class="hand-total"></div>
+          </div>
+          <div id="dealer-cards" class="hand-cards"></div>
+
+          <div class="dealer-rule">Dealer must draw to 16 and stand on all 17's</div>
+
+          <div id="player-cards" class="hand-cards"></div>
+          <div class="hand-header">
+            <div class="hand-label">Player</div>
+            <div id="player-total" class="hand-total"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Split Section -->
+      <div class="hand-row" id="split-area">
+        <div class="card-stage">
+          <div class="hand-header">
+            <div class="hand-label">Split Hand</div>
+            <div id="split-total" class="hand-total"></div>
+          </div>
+          <div id="split-cards" class="hand-cards"></div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button id="hit-btn" class="action-btn" disabled>Hit</button>
+        <button id="stand-btn" class="action-btn" disabled>Stand</button>
+        <button id="double-btn" class="action-btn" disabled>Double</button>
+        <button id="split-btn" class="action-btn" disabled>Split</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <small>All chips are virtual. Actual multipliers may vary.</small>
+    </footer>
+  </div>
+
+  <script src="blackjack.js"></script>
+
+  <script>
+    function sendHeight() {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ type: 'resize', height: height }, '*');
+    }
+
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+
+    const observer = new MutationObserver(sendHeight);
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      characterData: true
+    });
+  </script>
+</body>
+</html>

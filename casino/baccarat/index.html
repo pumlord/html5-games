@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Baccarat — Casino</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1><a href="../index.html" class="back-link">‹</a> Baccarat</h1>
+      <div class="balance-display">Balance: $<span id="balance">1000.00</span></div>
+    </header>
+
+    <section class="controls">
+      <div class="controls-row">
+        <label>Bet Amount: $<input id="bet-amount" type="number" min="1" step="1" value="10" /></label>
+        <div class="controls-row-left">
+          <button id="start-game">Bet</button>
+        </div>
+      </div>
+      <div class="controls-row">
+        <button id="reset">Reset Balance</button>
+        <div class="message" id="message"></div>
+      </div>
+    </section>
+
+    <main class="game">
+      <!-- Simple placeholder area for card visuals -->
+      <div class="game-row">
+        <div class="card-stage">
+					<div class="deal-area" id="deal-area">
+            <div class="hand-row">
+                <div class="hand-label">Player</div>
+                <div class="hand-cards" id="player-cards"></div>
+            </div>
+
+            <div class="hand-row">
+                <div class="hand-label">Banker</div>
+                <div class="hand-cards" id="banker-cards"></div>
+            </div>
+					</div>
+        </div>
+      </div>
+
+      <!-- Guess Buttons (Player, Tie, Banker) -->
+      <div class="guess-buttons" id="guess-buttons">
+        <button id="player-btn" class="guess-btn" data-choice="player">
+          <div class="label">Player</div>
+          <div class="payout" id="payout-player">1:1</div>
+        </button>
+
+        <button id="tie-btn" class="guess-btn" data-choice="tie">
+          <div class="label">Tie</div>
+          <div class="payout" id="payout-tie">8:1</div>
+        </button>
+
+        <button id="banker-btn" class="guess-btn" data-choice="banker">
+          <div class="label">Banker</div>
+          <div class="payout" id="payout-banker">0.95:1</div>
+        </button>
+      </div>
+    </main>
+
+		<div class="history-container">
+			<h3>History</h3>
+			<div id="history-list" class="history-list"></div>
+		</div>
+
+    <footer class="footer">
+      <small>All chips are virtual. Actual multipliers may vary.</small>
+    </footer>
+  </div>
+
+  <script src="baccarat.js"></script>
+
+  <script>
+    function sendHeight() {
+      const height = document.documentElement.scrollHeight;
+      parent.postMessage({ height }, "*");
+    }
+
+    // Send immediately on load
+    window.addEventListener("load", sendHeight);
+
+    // Also on resize
+    window.addEventListener("resize", sendHeight);
+
+    // Observe content changes dynamically
+    const observer = new MutationObserver(sendHeight);
+    observer.observe(document.body, { childList: true, subtree: true });
+  </script>
+</body>
+</html>

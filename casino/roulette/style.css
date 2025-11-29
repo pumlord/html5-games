@@ -1,0 +1,837 @@
+:root {
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --accent: #c6ff00;
+  --muted: #9aa0a6;
+  --danger: #ff6b6b;
+}
+
+html {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #14151f;
+  color: #fff;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/*notification*/
+#notification{
+	position: fixed;
+	width: 90%;
+	max-width: 425px;
+	height: auto;
+	min-height: 270px;
+	background-color: #ad0205;
+	z-index: 1000;
+	border: 8px solid #d3b201;
+	border-radius: 12px;
+	transition: 1s;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+}
+
+.nSpan{
+	display: block;
+	position: relative;
+	top: 105px;
+	font-size: 53px;
+	text-align: center;
+}
+
+.nBtn{
+	display: block;
+	position: relative;
+	top: 116px;
+	left: 25%;
+	width: 45%;
+	padding: 10px;
+	font-size: 32px;
+	text-align: center;
+	background-color: green;
+	border-radius: 15px;
+	box-shadow: 3px 4px rgb(0 0 0 / 25%);
+	cursor: pointer;
+	transition: .5s;
+}
+
+.nBtn:active{
+	top: 118px;
+	left: calc(25% + 2px);
+	box-shadow: 1px 2px rgb(0 0 0 / 25%);
+}
+
+.nsWin{
+	position:absolute;
+	left: 4px;
+}
+
+.nsWinBlock{
+	display: inline-block;
+	font-size: 21px;
+	border-right: 1px solid;
+	border-left: 1px solid;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+/*notification end*/
+
+/*betting table*/
+#betting_board{
+	width: 425px;
+    height: 268px;
+    border: 1px solid;
+    position: relative;
+}
+
+.bbtop{
+	margin-left:2px;
+	background-color: #016D29;
+}
+
+.bbtoptwo{
+	width: calc(50% - 8px);
+	border: 1px solid;
+	display: inline-block;
+	padding: 12px 4px;
+	margin-left: -2px;
+	text-align: center;
+	font-size:20px;
+	font-weight: bold;
+}
+
+.number_board{
+	margin-left: 1px;
+}
+
+.number_block{
+	width: 33.95px;
+    border: 1px solid;
+    text-align: center;
+    display: inline-block;
+    margin: 0 -0.2px;
+    padding: 27.2px 0px;
+}
+
+.nbn{
+	font-size: 17px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.bo3_board, .oto_board{
+	width:425px;
+	margin-left: 1px;
+	background-color: #016D29;
+}
+
+.bo3_block, .oto_block{
+	border: 1px solid;
+	display: inline-block;
+	padding: 6.8px 4.25px;
+	width: 133.15px;
+	margin-left: -1.68px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.oto_block{
+	width: 97.7px;
+	margin-left: -1.68px;
+}
+
+.number_0{
+	position: absolute;
+	border: 2px solid;
+	margin-left: -48.5px;
+	margin-top: -0.44px;
+	padding: 102.5px 17px;
+	border-bottom-left-radius: 100%;
+	border-top-left-radius: 100%;
+	background-color: #016D29;
+}
+
+.tt1_block{
+	border: 2px solid;
+	width: 55.25px;
+	position: absolute;
+	margin-left: 423.3px;
+	padding: 26.9px 0px;
+	margin-top: -76.3px;
+	background-color: #016D29;
+}
+
+.winning_lines{
+	position: absolute;
+	margin-top: -116.5px;
+	width: 512.5px;
+	height: 0;
+}
+
+.wlttb{
+	position: relative;
+	width: 100%;
+    height: 8.5px;
+    margin-left: -6.6px;
+	top: 228.65px;
+}
+
+#wlttb_top{
+    position: absolute;
+    margin-top: -75.65px;
+    margin-left: 9.35px;
+}
+
+#wlttb_2, #wlttb_3{
+    margin-top: 67.15px;
+}
+
+.wlrtl{
+	position: relative;
+    display: inline-block;
+    width: 8.5px;
+    height: 226.1px;
+    top: -2.55px;
+    margin-left: 31.45px;
+}
+
+#wlrtl_2, #wlrtl_3, #wlrtl_6, #wlrtl_9, #wlrtl_11{
+	margin-left: 26.35px;
+}
+#wlrtl_4, #wlrtl_5, #wlrtl_7, #wlrtl_8, #wlrtl_10{
+	margin-left: 27.2px;
+}
+
+.wlcb{
+	position: absolute;
+	width: 405.45px;
+	height: 34.85px;
+	top: 216.75px;
+	margin-left: 11.05px;
+}
+
+#wlcb_2{
+	top: 291.55px;
+}
+
+.cbbb{
+    width: 17px;
+    height: 17px;
+    position: relative;
+	display: inline-block;
+	margin-left:18.7px;
+	margin-top: 8.1px;
+	cursor: pointer;
+}
+
+#cbbb_1, #cbbb_4, #cbbb_5, #cbbb_7, #cbbb_9, #cbbb_11, #cbbb_12, #cbbb_15, #cbbb_16, #cbbb_18, #cbbb_20, #cbbb_22{
+	margin-left: 17.85px;
+}
+
+#cbbb_3, #cbbb_14{
+	margin-left: 17.43px;
+}
+
+#cbbb_6, #cbbb_17{
+	margin-left: 19.55px;
+}
+
+#cbbb_8, #cbbb_10, #cbbb_19, #cbbb_21{
+	margin-left: 18.7px;
+}
+
+.ttbbetblock{
+	width: 16.24px;
+	height: 8.5px;
+	position: relative;
+	display: inline-block;
+	margin-left: 19.14px;
+	top: -1.7px;
+	cursor:pointer;
+	z-index:3;
+}
+
+.rtlbb1, .rtlbb2, .rtlbb3{
+	height: 38.25px;
+    margin-top: 19.55px;
+	width: 8.5px;
+}
+
+.rtlbb2, .rtlbb3{
+    margin-top: 42px;
+}
+
+.spinBtn{
+	position: absolute;
+	margin-top: 329px;
+	margin-left: -392px;
+	font-size: 15px;
+	cursor: pointer;
+	background-color: #ffec00;
+	padding: 10px 5px;
+	border-radius: 100%;
+	color: #000;
+	font-weight: bold;
+}
+
+.redNum{
+	background-color: #E0080B;
+}
+
+.blackNum{
+	background-color: #000;
+}
+
+/* CHIP DECK & BANK CONTAINER - TO BE REFINED LATER
+.chipDeck, .bankContainer{
+	position: absolute;
+	margin-left: -383px;
+	margin-top: -74px;
+	width: 310px;
+	height:39px;
+	padding: 3px 0;
+	border: 1px solid;
+	border-radius: 10px;
+	box-shadow: inset -2px -4px rgb(0 0 0 / 20%);
+}
+
+.bankContainer{
+	margin-top: -21px;
+}
+
+.cdChip{
+	width: 27px;
+    height: 27px;
+    background-color: #fff;
+    border: 5px solid;
+    border-radius: 100%;
+    display: inline-block;
+    margin-left: 9px;
+    color: #000;
+	cursor: pointer;
+}
+
+.cdChipSpan{
+	display: inherit;
+	position: relative;
+	top: 5px;
+	width: 26px;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+}
+
+.cdChipActive{
+	position: relative;
+	top: -4px;
+	box-shadow: 0 4px rgb(0 0 0 / 20%);
+}
+
+.clearBet{
+	border-color:red;
+	background-color:red;
+	color:#fff;
+	margin-left:22px;
+}
+
+.clearBet .cdChipSpan{
+	margin-left:-2px;
+}
+
+.bank, .bet{
+	display: inline-block;
+	width: calc(50% - 28px);
+    background-color: #000;
+    font-size: 18px;
+    margin-left: 7px;
+    padding: 5px;
+    border: 4px solid silver;
+    border-radius: 7px;
+    text-align: right;
+}
+*/
+
+/* PREVIOUS NUMBERS BLOCK - REMOVED
+.pnBlock{
+	position: absolute;
+	border: 1px solid;
+	width: 500px;
+	height: 45px;
+	margin-top: 10px;
+	margin-left: -1px;
+}
+
+#pnContent{
+	border: 4px solid #d5b714;
+	width: 485px;
+	height: 31px;
+	position: relative;
+	display: block;
+	margin-left: 4px;
+	margin-top: 3px;
+	background-color: #fff;
+	color: #000;
+	overflow:hidden;
+}
+
+.pnRed, .pnBlack, .pnGreen{
+	position: relative;
+	display: inline;
+	padding:10px;
+	font-size: 19px;
+	top: 5px;
+}.pnRed{
+	color: red;
+}.pnBlack{
+	color: black;
+}.pnGreen{
+	color: green;
+}
+*/
+/*betting table end*/
+
+/*wheel*/
+@keyframes wheelRotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+@keyframes ballRotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-359deg);
+	}
+}
+
+.wheel {
+	height: 250px;
+	width: 250px;
+	position: relative;
+	left: 0;
+}
+	
+.ballTrack{
+	width: 170px;
+	height: 166px;
+	position: absolute;
+	left: 38px;
+	top: 40px;
+	border-radius: 100%;
+	z-index:2;
+}
+
+.ball{
+	background-color: #fff;
+	width: 13px;
+	height: 13px;
+	border-radius: 100%;
+	position: relative;
+	left: 87px;
+	top: -6.5px;
+}
+
+.turret{
+	border-radius: 100%;
+	background: radial-gradient( circle at 30% 30%, #f3c620, #1a1608 );
+	width: 36px;
+	height: 36px;
+	position: absolute;
+	top: 106px;
+	left: 107px;
+	z-index: 1;
+}
+
+.turretHandle{
+	background: radial-gradient( circle at 44%, #f3c620, #6a570f);
+	width: 70px;
+	height: 11px;
+	position: absolute;
+	left: 90px;
+	top: 118px;
+}
+
+.thendOne, .thendTwo{
+	border-radius: 100%;
+	background: radial-gradient( circle at 30% 30%, #f3c620, #1a1608 );
+	width: 20px;
+	height: 20px;
+	position: absolute;
+}
+
+.thendOne{
+	top: -5px;
+	left: -16px;
+}
+
+.thendTwo{
+	top: -5px;
+	left: 66px;
+}
+
+.outerRim {
+	position: absolute;
+	left:0;
+	top:0;
+	width: 232px;
+	height: 232px;
+	border-radius: 100%;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.5);
+	border: 8px solid #F3c620;
+}
+
+.block {
+	transition: all 1s;
+	position: absolute;
+	width: 232px;
+	height: 232px;
+	border-radius: 100%;
+	clip: rect(0px, 116px, 232px, 0px);
+}
+
+.sect {
+	position: absolute;
+	top:8px;
+	left:8px;
+	width: 232px;
+	height: 232px;
+	border-radius: 100%;
+	clip: rect(0px, 232px, 232px, 116px);
+}
+
+.double, .single{
+	position: absolute;
+	z-index: 1;
+	color: #fff;
+	font-size: 11px;
+	transform: rotate(3deg);
+}
+
+.double{
+	left: 118px;
+	margin-top: 3.6px;
+}
+
+.single{
+	left: 122px;
+	margin-top: 3.6px;
+}
+
+#sect1 .block {
+	background-color: #016D29;
+	transform:rotate(9.73deg);
+}
+    
+#sect2 .block, #sect4 .block, #sect6 .block, #sect8 .block, #sect10 .block, #sect12 .block, #sect14 .block, #sect16 .block, #sect18 .block, #sect20 .block, #sect22 .block, #sect24 .block, #sect26 .block, #sect28 .block, #sect30 .block, #sect32 .block, #sect34 .block, #sect36 .block {
+	background-color: #E0080B;
+	transform: rotate(9.73deg);
+}
+
+#sect3 .block, #sect5 .block, #sect7 .block, #sect9 .block, #sect11 .block, #sect13 .block, #sect15 .block, #sect17 .block, #sect19 .block, #sect21 .block, #sect23 .block, #sect25 .block, #sect27 .block, #sect29 .block, #sect31 .block, #sect33 .block, #sect35 .block, #sect37 .block {
+	background-color: #000;
+	transform: rotate(9.73deg);
+}
+
+#sect2 {
+	transform: rotate(9.73deg);
+}
+
+#sect3 {
+	transform: rotate(19.46deg);
+}
+
+#sect4 {
+	transform: rotate(29.19deg);
+}
+
+#sect5 {
+	transform: rotate(38.92deg);
+}
+
+#sect6 {
+	transform: rotate(48.65deg);
+}
+
+#sect7 {
+	transform: rotate(58.38deg);
+}
+
+#sect8 {
+	transform: rotate(68.11deg);
+}
+
+#sect9 {
+	transform: rotate(77.84deg);
+}
+
+#sect10 {
+	transform: rotate(87.57deg);
+}
+
+#sect11 {
+	transform: rotate(97.3deg);
+}
+
+#sect12 {
+	transform: rotate(107.03deg);
+}
+
+#sect13 {
+	transform: rotate(116.76deg);
+}
+
+#sect14 {
+	transform: rotate(126.49deg);
+}
+
+#sect15 {
+	transform: rotate(136.22deg);
+}
+
+#sect16 {
+	transform: rotate(145.95deg);
+}
+
+#sect17 {
+	transform: rotate(155.68deg);
+}
+
+#sect18 {
+	transform: rotate(165.41deg);
+}
+
+#sect19 {
+	transform: rotate(175.14deg);
+}
+
+#sect20 {
+	transform: rotate(184.87deg);
+}
+
+#sect21 {
+	transform: rotate(194.6deg);
+}
+
+#sect22 {
+	transform: rotate(204.33deg);
+}
+
+#sect23 {
+	transform: rotate(214.06deg);
+}
+
+#sect24 {
+	transform: rotate(223.79deg);
+}
+
+#sect25 {
+	transform: rotate(233.52deg);
+}
+
+#sect26 {
+	transform: rotate(243.25deg);
+}
+
+#sect27 {
+	transform: rotate(252.98deg);
+}
+
+#sect28 {
+	transform: rotate(262.71deg);
+}
+
+#sect29 {
+	transform: rotate(272.44deg);
+}
+
+#sect30 {
+	transform: rotate(282.17deg);
+}
+
+#sect31 {
+	transform: rotate(291.9deg);
+}
+
+#sect32 {
+	transform: rotate(301.63deg);
+}
+
+#sect33 {
+	transform: rotate(311.36deg);
+}
+
+#sect34 {
+	transform: rotate(321.09deg);
+}
+
+#sect35 {
+	transform: rotate(330.82deg);
+}
+
+#sect36 {
+	transform: rotate(340.55deg);
+}
+
+#sect37 {
+	transform: rotate(350.28deg);
+}
+
+.pockets {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	width: 188px;
+	height: 188px;
+	background-color: #000;
+	border-radius: 100%;
+	opacity: .5;
+}
+
+.pocketsRim {
+	position: absolute;
+	top: 27px;
+	left: 27px;
+	width: 188px;
+	height: 188px;
+	border-radius: 100%;
+	border: 2.4px solid silver;
+}
+
+.cone {
+	position: absolute;
+	top: 50px;
+	left: 49px;
+	height: 144px;
+	width: 144px;
+	border: 2.4px solid #9f9a9a;
+	border-radius: 100%;
+	background: radial-gradient(circle at 80px 80px, #892c10, #000);
+}
+/*wheel end*/
+
+/*chip*/
+.chip{
+    width: 18px;
+	height: 18px;
+	background-color:#fff;
+	border: 2.5px solid;
+	border-radius: 100%;
+    position:absolute;
+}
+
+.chipSpan{
+	color: #000;
+	font-weight: bold;
+	font-size: 9px;
+	position: relative;
+	display: block;
+	text-align: center;
+	top: 3px;
+}
+
+.gold{
+	border-color:gold;
+}
+
+.red{
+	border-color:red;
+}
+
+.orange{
+	border-color:orange;
+}
+
+.blue{
+	border-color:blue;
+}
+
+.tt1_block .chip{
+	margin-left: 19px;
+	margin-top: -24px;
+}
+
+.number_block .chip{
+	margin-left: 7px;
+	margin-top: -24px;
+}
+
+.wlrtl .chip{
+	margin-left: -9px;
+	margin-top: 9px;
+}
+
+.cbbb .chip{
+	margin-left: -4px;
+	margin-top: -5px;
+}
+
+.ttbbetblock .chip{
+	margin-left: -7px;
+	margin-top: -8px;
+}
+
+#wlttb_top .chip{
+	margin-left: -5px;
+	margin-top: -8px;
+}
+
+.bbtoptwo .chip{
+	margin-left: 108px;
+	margin-top: -25px;
+}
+
+.number_0 .chip{
+	margin-left: -8px;
+	margin-top: -22px;
+}
+
+.bo3_block .chip{
+	margin-left: 65px;
+	margin-top: -26px;
+}
+
+.oto_block .chip{
+	margin-left: 45px;
+	margin-top: -25px;
+}
+/*chip end*/
