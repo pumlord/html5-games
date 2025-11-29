@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Emoji Sugar-Rush Slot — 7×7</title>
+<link rel="stylesheet" href="slot.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Emoji Rush 🎰</h1>
+      <div class="balance-display">
+        Balance: $<span id="balance" class="balance">1000.00</span>
+        <button id="paytable-toggle" class="help-btn" title="View Paytable">?</button>
+      </div>
+    </header>
+
+    <main class="main" style="max-width:650px;">
+      <section class="slot-panel">
+        <div class="grid-wrap">
+          <div id="grid" class="grid" aria-hidden="false"></div>
+        </div>
+
+        <section class="controls">
+          <div class="controls-row">
+            <div class="controls-row-left">
+              <label>Bet: $
+                <select id="betSelect">
+                  <option value="0.5">0.5</option>
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                </select>
+              </label>
+              <div class="stats">
+                <div>Free Spins: <span id="freeSpins">0</span></div>
+                <div>Multiplier: <span id="globalMultiplier">1x</span></div>
+              </div>
+            </div>
+            <div class="controls-row-right">
+              <button id="spinBtn" class="btn-spin">SPIN</button>
+              <button id="autoplayBtn" class="btn-auto">Autoplay</button>
+              <button id="stopAutoBtn" class="btn-auto hidden">Stop</button>
+            </div>
+          </div>
+          <div class="controls-row">
+            <div class="message" id="msgTemp"></div>
+            <div class="autoplay-settings">
+              <label>Autoplay Count:
+                <input id="autoCount" type="number" min="1" max="1000" value="20" />
+              </label>
+            </div>
+          </div>
+        </section>
+
+
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>All chips are virtual. Actual multipliers may vary.</small>
+    </footer>
+  </div>
+
+  <!-- Paytable Modal -->
+  <div id="paytable-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Paytable</h3>
+        <button id="close-modal" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-subtitle">Cluster pays: cluster size → multiplier of bet</p>
+        <div class="pay-grid" id="paygrid"></div>
+        <div class="note">Clusters of 5+ explode; each explosion adds +1 to that tile's multiplier for the remainder of the spin/free spins.</div>
+      </div>
+    </div>
+  </div>
+
+<script src="slot.js"></script>
+</body>
+</html>
